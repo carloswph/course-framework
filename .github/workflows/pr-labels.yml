@@ -1,3 +1,6 @@
+# Checks new PRs for valid Addition or Task types labels
+# Fails if none of these labels are included
+
 name: Pull Request Labels
 on:
   pull_request:
@@ -10,4 +13,4 @@ jobs:
         with:
           mode: exactly
           count: 1
-          labels: "Task : Code, Task : Audio, Task : Exercises, Task : Composition"
+          labels: "Task : Code, Task : Audio, Task : Exercises, Task : Composition, Addition : Documentation, Addition : Media, Addition : Examples, Addition : Exercises, Addition : Lecture, Addition : Material"
