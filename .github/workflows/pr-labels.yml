@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: mheap/github-action-required-labels@v1
         with:
-          mode: exactly
+          mode: minimum
           count: 1
           labels: "Task : Code, Task : Audio, Task : Exercises, Task : Composition, Addition : Documentation, Addition : Media, Addition : Examples, Addition : Exercises, Addition : Lecture, Addition : Material"
