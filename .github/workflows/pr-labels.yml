@@ -1,3 +1,6 @@
+# Checks new PRs for valid Addition or Task types labels
+# Fails if none of these labels are included
+
 name: Pull Request Labels
 on:
   pull_request:
@@ -8,6 +11,12 @@ jobs:
     steps:
       - uses: mheap/github-action-required-labels@v1
         with:
-          mode: exactly
+          mode: minimum
           count: 1
-          labels: "Task : Code, Task : Audio, Task : Exercises, Task : Composition"
+          labels: "Task : Code, Task : Audio, Task : Exercises, Task : Composition, Addition : Documentation, Addition : Media, Addition : Examples, Addition : Exercises, Addition : Lecture, Addition : Material"
+  team-labeler:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: carloswph/team-labeler-action@v0.1.0
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
